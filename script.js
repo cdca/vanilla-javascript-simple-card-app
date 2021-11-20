@@ -34,8 +34,10 @@ async function loadPlayers() {
         card.firstElementChild.children[i].children[0].innerText.length < 19
       ) {
         card.firstElementChild.children[i].children[1].style.display = "none";
+        
         card.firstElementChild.children[i].children[0].style.display = "block";
       } else {
+        card.firstElementChild.children[i].children[1].innerText = card.firstElementChild.children[i].children[0].innerText.slice(0,13).concat("...")
         card.firstElementChild.children[i].children[1].style.display = "block";
         card.firstElementChild.children[i].children[0].style.display = "none";
       }
