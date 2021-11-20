@@ -1,0 +1,89 @@
+body {
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  height: 200px;
+}
+
+.controls {
+  border: 1px solid black;
+  margin: 20px;
+  flex: 0.5;
+  padding: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 0 20px;
+  max-width: 500px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  margin: 10px;
+  gap: 1rem;
+  background-color: white;
+  padding: 20px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  margin: 0;
+  border: 1px solid black;
+  background-color: bisque;
+  height: 150px;
+  font-weight: 600;
+  align-content: center;
+  justify-content: center;
+}
+
+.show-card {
+  font-size: 25px;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  pointer-events: none;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  background-color: antiquewhite;
+  order: 1px solid white;
+  height: 50px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  width: 100%;
+}

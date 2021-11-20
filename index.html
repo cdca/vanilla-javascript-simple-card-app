@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Card game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="column">
+        <div class="details">
+          <h1>Details</h1>
+          <div class="show-card" id="show-card">
+            <div class="show-real-name" id="show-real-name"></div>
+            <div class="show-player-name" id="show-player-name"></div>
+            <div class="show-asset" id="show-asset"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <h1>Controls</h1>
+          <div class="button-row">
+            <button class="button" id="button-asc">SORT ASC</button>
+            <button class="button" id="button-dsc">SORT DSC</button>
+          </div>
+          <button class="button" id="send">SUBMIT</button>
+        </div>
+      </div>
+      <div class="overview">
+        <h1>Overview</h1>
+        <div class="card" id="card"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
