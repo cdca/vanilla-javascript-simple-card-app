@@ -34,10 +34,13 @@ async function loadPlayers() {
         card.firstElementChild.children[i].children[0].innerText.length < 19
       ) {
         card.firstElementChild.children[i].children[1].style.display = "none";
-        
+
         card.firstElementChild.children[i].children[0].style.display = "block";
       } else {
-        card.firstElementChild.children[i].children[1].innerText = card.firstElementChild.children[i].children[0].innerText.slice(0,13).concat("...")
+        card.firstElementChild.children[i].children[1].innerText =
+          card.firstElementChild.children[i].children[0].innerText
+            .slice(0, 13)
+            .concat("...");
         card.firstElementChild.children[i].children[1].style.display = "block";
         card.firstElementChild.children[i].children[0].style.display = "none";
       }
@@ -72,11 +75,15 @@ function sortDsc() {
     .forEach((node) => list.appendChild(node));
 }
 
-// Post with XMLHttpRequest
+//Post with XMLHttpRequest
 function submit() {
   if (showRealName.innerText) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://reqbin.com/echo/post/json", true);
+    xhr.open(
+      "POST",
+      "https://simple-database-9334d-default-rtdb.europe-west1.firebasedatabase.app/player.json",
+      true
+    );
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -92,28 +99,31 @@ function submit() {
   "asset": ${showAsset.innerText},
    }`;
 
-    xhr.send(data);
+    xhr.send(JSON.stringify(data));
   } else {
     console.log("No player");
   }
 }
 
-// Post with fetch API
+//Post with fetch API
 
 // async function submit() {
 //   if (showRealName.innerText) {
-//     const response = await fetch("https://reqbin.com/echo/post/json", {
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//       body: `{
+//     const response = await fetch(
+//       "https://simple-database-9334d-default-rtdb.europe-west1.firebasedatabase.app/player.json",
+//       {
+//         method: "POST",
+//         headers: {
+//           Accept: "application/json",
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(`{
 //        "realName":${showRealName.innerText},
 //        "playerName": ${showPlayerName.innerText},
 //        "asset": ${showAsset.innerText},
-//    }`,
-//     });
+//    }`),
+//       }
+//     );
 
 //     response.json().then((data) => {
 //       console.log(data);
